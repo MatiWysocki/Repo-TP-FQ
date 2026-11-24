@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorio Térmico</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Laboratorio Térmico</h1>
+        <p>Experimentá con la transferencia de calor</p>
+    </header>
+
+    <main>
+
+        <section class="experimento">
+            <h2>Experimento 1: Refrigeración del procesador</h2>
+
+            <p>
+                Modificá la carga de trabajo y la refrigeración
+                para observar cómo cambia la temperatura.
+            </p>
+
+            <h3>Carga del procesador</h3>
+            <input type="range" id="carga" min="0" max="100" value="50">
+            <p id="valorCarga">50%</p>
+
+            <h3>Velocidad del ventilador</h3>
+            <input type="range" id="ventilador" min="0" max="100" value="50">
+            <p id="valorVentilador">50%</p>
+
+            <h3>Tipo de refrigeración</h3>
+            <select id="refrigeracion">
+                <option value="aire">Refrigeración por aire</option>
+                <option value="liquida">Refrigeración líquida</option>
+            </select>
+
+            <div id="procesador" class="procesador">
+                <h2>CPU</h2>
+                <p id="temperaturaCPU">50 °C</p>
+            </div>
+
+            <h3>Indicador de temperatura</h3>
+            <div class="barra">
+                <div id="barraCPU" class="progreso"></div>
+            </div>
+
+            <p id="estadoCPU"></p>
+
+            <h3>Explicación física</h3>
+            <p id="explicacionCPU"></p>
+
+            <div class="desafio">
+                <h3>Reto Extraaaaaa</h3>
+                <p>
+                    Conseguí que la CPU funcione con una carga
+                    de al menos 90% sin superar los 75 °C.
+                </p>
+
+                <button id="comprobar">Comprobar desafío</button>
+
+                <p id="resultadoDesafio"></p>
+            </div>
+        </section>
+
+        <section class="experimento">
+            <h2>Experimento 2: Contaminación térmica</h2>
+
+            <p>
+                Investigá cómo la temperatura del océano
+                afecta la solubilidad del oxígeno.
+            </p>
+
+            <h3>Temperatura del agua</h3>
+            <input type="range" id="agua" min="0" max="40" value="20">
+
+            <p id="temperaturaAgua">20 °C</p>
+
+            <div id="oceano" class="oceano">
+                <h2>Océano</h2>
+                <p id="oxigeno">Oxígeno: 7.6 mg/L</p>
+                <p id="peces">🐟 🐟 🐟</p>
+            </div>
+
+            <h3>Nivel de oxígeno disuelto</h3>
+            <div class="barra">
+                <div id="barraOxigeno" class="progreso"></div>
+            </div>
+
+            <p id="estadoOceano"></p>
+
+            <h3>Explicación física</h3>
+            <p id="explicacionAgua"></p>
+
+            <button id="contaminar">Simular vertido caliente</button>
+            <button id="reiniciar">Reiniciar océano</button>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Proyecto FQ</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

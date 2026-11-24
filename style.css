@@ -1,0 +1,138 @@
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #eef2f5;
+    color: #222;
+}
+
+header {
+    background-color: #183153;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+header p {
+    color: #d5e2f0;
+}
+
+main {
+    max-width: 850px;
+    margin: auto;
+    padding: 20px;
+}
+
+.experimento {
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px #cccccc;
+}
+
+h2 {
+    color: #183153;
+}
+
+h3 {
+    margin-top: 25px;
+}
+
+input {
+    width: 100%;
+    cursor: pointer;
+    accent-color: #183153;
+}
+
+select {
+    padding: 12px;
+    width: 100%;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+.procesador {
+    background-color: #24a36a;
+    color: white;
+    padding: 25px;
+    text-align: center;
+    border-radius: 12px;
+    margin-top: 25px;
+    transition: background-color 0.3s;
+}
+
+.procesador h2,
+.oceano h2 {
+    color: white;
+}
+
+#temperaturaCPU {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.oceano {
+    background-color: #168bc4;
+    color: white;
+    padding: 25px;
+    text-align: center;
+    border-radius: 12px;
+    margin-top: 25px;
+    transition: background-color 0.3s;
+}
+
+#peces {
+    font-size: 35px;
+}
+
+.barra {
+    background-color: #dddddd;
+    width: 100%;
+    height: 22px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.progreso {
+    height: 100%;
+    width: 50%;
+    background-color: #24a36a;
+    transition: width 0.3s, background-color 0.3s;
+}
+
+.desafio {
+    background-color: #edf4ff;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 25px;
+}
+
+button {
+    background-color: #183153;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    margin: 8px 5px 8px 0;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+button:hover {
+    background-color: #28578a;
+}
+
+#estadoCPU,
+#estadoOceano,
+#resultadoDesafio {
+    font-weight: bold;
+}
+
+footer {
+    background-color: #183153;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
