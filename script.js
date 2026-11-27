@@ -214,3 +214,179 @@ reiniciar.addEventListener("click", reiniciarOceano);
 
 actualizarProcesador();
 actualizarOceano();
+
+
+// BLOQUE 1: FRENADA REGENERATIVA
+
+const velocidad = document.getElementById("velocidad");
+const recuperacion = document.getElementById("recuperacion");
+
+const comprobarFrenada = document.getElementById("comprobarFrenada");
+
+function actualizarFrenada() {
+
+    let velocidadActual = Number(velocidad.value);
+    let porcentaje = Number(recuperacion.value);
+
+    document.getElementById("valorVelocidad").innerHTML =
+        velocidadActual + " km/h";
+
+    document.getElementById("valorRecuperacion").innerHTML =
+        porcentaje + "%";
+
+    // Simulación de un auto de 1200 kg
+    let masa = 1200;
+
+    // Convertimos km/h a m/s
+    let velocidadMS = velocidadActual / 3.6;
+
+    // Energía cinética inicial en kJ
+    let energia = 0.5 * masa * velocidadMS * velocidadMS / 1000;
+
+    let recuperada = energia * porcentaje / 100;
+
+    let noRecuperada = energia - recuperada;
+
+    document.getElementById("energiaTotal").innerHTML =
+        "Energía inicial: " + energia.toFixed(1) + " kJ";
+
+    document.getElementById("energiaRecuperada").innerHTML =
+        "Energía recuperada: " + recuperada.toFixed(1) + " kJ";
+
+    document.getElementById("energiaPerdida").innerHTML =
+        "Energía no recuperada: " + noRecuperada.toFixed(1) + " kJ";
+
+    document.getElementById("barraEnergia").style.width =
+        porcentaje + "%";
+
+    document.getElementById("explicacionFrenada").innerHTML =
+        "Durante la frenada regenerativa, el motor eléctrico " +
+        "funciona como generador y transforma parte de la " +
+        "energía cinética en electricidad para recargar " +
+        "la batería. La energía restante no se recupera.";
+
+    document.getElementById("resultadoFrenada").innerHTML = "";
+}
+
+
+function revisarFrenada() {
+
+    let velocidadActual = Number(velocidad.value) / 3.6;
+    let porcentaje = Number(recuperacion.value);
+
+    let energia = 0.5 * 1200 * velocidadActual * velocidadActual / 1000;
+
+    let recuperada = energia * porcentaje / 100;
+
+    if (recuperada >= 70) {
+
+        document.getElementById("resultadoFrenada").innerHTML =
+            "¡Desafío completado! Recuperaste al menos 70 kJ.";
+    }
+    else {
+
+        document.getElementById("resultadoFrenada").innerHTML =
+            "Todavía no lo lograste. Probá otra configuración.";
+    }
+}
+
+
+// BLOQUE 2: COMBUSTIÓN
+
+const oxigenoCombustion =
+    document.getElementById("oxigenoCombustion");
+
+const respuestaCombustion =
+    document.getElementById("respuestaCombustion");
+
+
+function actualizarCombustion() {
+
+    let oxigeno = oxigenoCombustion.value;
+
+    if (oxigeno == "suficiente") {
+
+        document.getElementById("tipoCombustion").innerHTML =
+            "Combustión completa";
+
+        document.getElementById("ecuacionCombustion").innerHTML =
+            "CH₄ + 2O₂ → CO₂ + 2H₂O + calor";
+
+        document.getElementById("panelCombustion").style.backgroundColor =
+            "#e67e22";
+
+        document.getElementById("explicacionCombustion").innerHTML =
+            "Cuando existe suficiente oxígeno, el metano " +
+            "puede experimentar una combustión completa, " +
+            "produciendo dióxido de carbono y agua.";
+    }
+    else {
+
+        document.getElementById("tipoCombustion").innerHTML =
+            "Combustión incompleta";
+
+        document.getElementById("ecuacionCombustion").innerHTML =
+            "2CH₄ + 3O₂ → 2CO + 4H₂O + calor";
+
+        document.getElementById("panelCombustion").style.backgroundColor =
+            "#80505a";
+
+        document.getElementById("explicacionCombustion").innerHTML =
+            "Cuando el oxígeno es insuficiente, puede " +
+            "producirse monóxido de carbono (CO) y también " +
+            "hollín (C), entre otros productos. " +
+            "El CO es un gas tóxico para los seres vivos.";
+    }
+
+    respuestaCombustion.value = "";
+
+    document.getElementById("resultadoCombustion").innerHTML = "";
+}
+
+
+function revisarCombustion() {
+
+    let condicion = oxigenoCombustion.value;
+    let respuesta = respuestaCombustion.value;
+
+    if (respuesta == "") {
+
+        document.getElementById("resultadoCombustion").innerHTML =
+            "Primero seleccioná una respuesta.";
+    }
+    else if (condicion == "suficiente" && respuesta == "completa") {
+
+        document.getElementById("resultadoCombustion").innerHTML =
+            "¡Correcto! Se produce dióxido de carbono y agua.";
+    }
+    else if (condicion == "escaso" && respuesta == "incompleta") {
+
+        document.getElementById("resultadoCombustion").innerHTML =
+            "¡Correcto! Puede producirse monóxido de carbono y agua.";
+    }
+    else {
+
+        document.getElementById("resultadoCombustion").innerHTML =
+            "Respuesta incorrecta. ¡Intentá nuevamente!";
+    }
+}
+
+
+// EVENTOS
+
+velocidad.addEventListener("input", actualizarFrenada);
+
+recuperacion.addEventListener("input", actualizarFrenada);
+
+comprobarFrenada.addEventListener("click", revisarFrenada);
+
+oxigenoCombustion.addEventListener("change", actualizarCombustion);
+
+document.getElementById("comprobarCombustion")
+    .addEventListener("click", revisarCombustion);
+
+
+// INICIAR ACTIVIDADES
+
+actualizarFrenada();
+actualizarCombustion();

@@ -136,3 +136,41 @@ footer {
     text-align: center;
     padding: 15px;
 }
+
+.auto {
+    background-color: #2575b9;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    border-radius: 12px;
+    margin-top: 20px;
+}
+
+.auto h2 {
+    color: white;
+    font-size: 35px;
+}
+
+.combustion {
+    background-color: #e67e22;
+    color: white;
+    padding: 25px;
+    text-align: center;
+    border-radius: 12px;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+.combustion h2 {
+    color: white;
+}
+
+#ecuacionCombustion {
+    font-size: 21px;
+    font-weight: bold;
+}
+
+#resultadoFrenada,
+#resultadoCombustion {
+    font-weight: bold;
+}

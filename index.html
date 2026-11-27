@@ -17,7 +17,123 @@
     <main>
 
         <section class="experimento">
-            <h2>Experimento 1: Refrigeración del procesador</h2>
+
+
+<section class="experimento">
+
+    <h2>Bloque 1: Frenada regenerativa</h2>
+
+    <p>
+        Descubrí cómo los autos eléctricos recuperan
+        parte de su energía al frenar.
+    </p>
+
+    <h3>Velocidad del auto</h3>
+    <input type="range" id="velocidad"
+           min="10" max="120" value="60" step="10">
+
+    <p id="valorVelocidad">60 km/h</p>
+
+    <h3>Energía recuperada</h3>
+    <input type="range" id="recuperacion"
+           min="0" max="70" value="40" step="10">
+
+    <p id="valorRecuperacion">40%</p>
+
+    <div class="auto">
+        <h2>🚗 ⚡ 🔋</h2>
+        <p id="energiaTotal"></p>
+        <p id="energiaRecuperada"></p>
+        <p id="energiaPerdida"></p>
+    </div>
+
+    <h3>Energía recuperada</h3>
+    <div class="barra">
+        <div id="barraEnergia" class="progreso"></div>
+    </div>
+
+    <p id="explicacionFrenada"></p>
+
+    <div class="desafio">
+        <h3>Desafío energético</h3>
+        <p>
+            Conseguí recuperar al menos 70 kJ
+            de energía durante una frenada.
+        </p>
+
+        <button id="comprobarFrenada">Comprobar</button>
+
+        <p id="resultadoFrenada"></p>
+    </div>
+
+</section>
+
+
+<section class="experimento">
+
+    <h2>Bloque 2: Laboratorio de combustión</h2>
+
+    <p>
+        El metano reacciona con oxígeno y libera calor.
+        Investigá qué sucede cuando cambia la
+        disponibilidad de oxígeno.
+    </p>
+
+    <h3>Disponibilidad de oxígeno</h3>
+
+    <select id="oxigenoCombustion">
+        <option value="suficiente">
+            Suficiente oxígeno
+        </option>
+
+        <option value="escaso">
+            Oxígeno insuficiente
+        </option>
+    </select>
+
+    <div class="combustion" id="panelCombustion">
+
+        <h2>🔥 Reacción química</h2>
+
+        <p id="ecuacionCombustion"></p>
+
+        <p id="tipoCombustion"></p>
+
+    </div>
+
+    <h3>¿Qué productos se forman?</h3>
+
+    <select id="respuestaCombustion">
+
+        <option value="">Seleccioná una respuesta</option>
+
+        <option value="completa">
+            Dióxido de carbono y agua
+        </option>
+
+        <option value="incompleta">
+            Monóxido de carbono y agua
+        </option>
+
+        <option value="incorrecta">
+            Solo oxígeno y metano
+        </option>
+
+    </select>
+
+    <button id="comprobarCombustion">
+        Comprobar respuesta
+    </button>
+
+    <p id="resultadoCombustion"></p>
+
+    <h3>Explicación química</h3>
+
+    <p id="explicacionCombustion"></p>
+
+</section>
+
+            <h2>Bloque 3: Refrigeración del procesador</h2>
 
             <p>
                 Modificá la carga de trabajo y la refrigeración
